@@ -1,0 +1,55 @@
+
+#Requirements
+pip install streamlit langchain langchain-community langchain-openai pymilvus pypdf2 PyMuPDF uuid
+
+
+#Milvus Installation
+
+Check your docker installation
+ - docker version (should be 19.03 or later)
+
+Download milvus docker file and rename to docker-compose.yml
+ - wget https://github.com/milvus-io/milvus/releases/download/v2.4.5/milvus-standalone-docker-compose.yml -O docker-compose.yml
+go to docker-compose.yml
+ - This file define three services needed for milvus
+   - etcd: Volum assigned for Data persisting.
+   - minio: 
+   - standalone: It actually runs milvus
+
+Check Docker is running 
+ - to to docker app 
+
+start milvus 
+ - docker compose up
+To check the running services
+ - docker compose ps
+ - Also go to Docker UI
+
+Now, how to insall Attu
+- Attu is an efficient open-source management tool for milvus. It provide GUI allowing you to easily
+interact with your vector milvus database. You can visualize your cluster status, manage metadata, perform
+data queris and much more.
+
+ - open docker-compose.yml and add following to the service block.
+ attu:
+    container_name: attu
+    image: zilliz/attu:v2.2.6
+    environment:
+      MILVUS_URL: milvus-standalone:19530
+    ports:
+      - "8000:3000"
+    depends_on:
+      - "standalone"
+
+run this command:
+ - docker compose up -d 
+
+open browser and go to localhost:8000
+username: root
+password: Milvis 
+
+# Milvus and Attu installation Youtube link
+https://youtu.be/612Y0jXmWKk?si=WXKhbVHYaPsO_mrN
+
+
+# https://api.python.langchain.com/en/latest/vectorstores/langchain_community.vectorstores.milvus.Milvus.html

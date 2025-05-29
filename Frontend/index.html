@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big B - Your AI Memory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">Big Brain</div>
+                <div class="nav-right">
+                    <a href="bigb-extension.zip" class="download-btn" download>
+                        <span>📥</span>
+                        Download Extension
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Ask your Big Brain</h1>
+            
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="queryInput" 
+                        placeholder="Ask your second brain..."
+                        autocomplete="off"
+                    >
+                    <button id="micButton" class="icon-button">🎙️</button>
+                    <button id="submitButton" class="icon-button">➤</button>
+                </div>
+                
+                <div id="recordingStatus" class="recording-status"></div>
+            </div>
+
+            <div id="responseContainer" class="response-container">
+                <div id="responseText" class="response-text"></div>
+                <div id="retrievedSources" class="sources"></div>
+                <div id="audioPlayer" class="audio-player"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ | Big B v2.4</p>
+        </footer>
+    </div>
+
+    <div class="dots-background"></div>
+    <script src="script.js"></script>
+</body>
+</html>

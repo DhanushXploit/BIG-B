@@ -1,0 +1,59 @@
+body {
+    width: 300px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  #notification {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  #message {
+    margin: 5px 0;
+    font-size: 14px;
+    color: green;
+  }
+  
+  #imagesList {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .imageContainer {
+    margin: 5px;
+    text-align: center;
+  }
+  
+  .imageContainer img {
+    width: 60px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .downloadIcon {
+    margin-top: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    background-color: rgb(183, 243, 210);
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .downloadIcon:hover {
+    background-color: rgb(124, 204, 160);
+    transition: background-color 0.3s ease;
+  }
+  
